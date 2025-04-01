@@ -7,7 +7,8 @@ import { PlayerMapper } from '../components/PlayerMapper';
 import { PageHeader } from '../components/PageHeader';
 import { Layout } from '../components/Layout';
 
-import rosters2024 from '../data/rosters2024.json';
+// import rosters2024 from '../data/rosters2024.json';
+import rosters2025 from '../data/rosters2025.json';
 import { saveRosters } from '../data/saveRosters';
 
 import { StarterPosContainer } from '../components/StarterPosContainer';
@@ -151,9 +152,9 @@ export const sortRosterPlayers = (players) => {
 */
 // const battersUrl = "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?stitch_env=prod&season=2021&stats=season&group=hitting&gameType=R&limit=1000&offset=0&sortStat=onBasePlusSlugging&order=desc&playerPool=ALL_CURRENT&leagueIds=103";
 
-const battersUrl = "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?stitch_env=prod&season=2024&sportId=1&stats=season&group=hitting&gameType=R&limit=300&offset=0&sortStat=onBasePlusSlugging&order=desc";
+const battersUrl = "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?stitch_env=prod&season=2025&sportId=1&stats=season&group=hitting&gameType=R&limit=300&offset=0&sortStat=onBasePlusSlugging&order=desc";
 
-const pitchersUrl = "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?stitch_env=prod&season=2024&stats=season&group=pitching&gameType=R&limit=1000&offset=0&sortStat=earnedRunAverage&order=asc&playerPool=ALL_CURRENT&leagueIds=103";
+const pitchersUrl = "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?stitch_env=prod&season=2025&stats=season&group=pitching&gameType=R&limit=1000&offset=0&sortStat=earnedRunAverage&order=asc&playerPool=ALL_CURRENT&leagueIds=103";
 
 
 
@@ -169,7 +170,7 @@ function HomePage() {
   const { state, dispatch } = usePoolContext();
 
   useEffect(() => {
-    let rosterBlob = rosters2024;
+    let rosterBlob = rosters2025;
     Object.keys(rosterBlob).map((rosterKey) => {
       rosterBlob[rosterKey].players.map((player) => {
         if (!player.roster) {
@@ -809,36 +810,27 @@ return (<Layout>
         <a href="https://sports.yahoo.com/mlb/scoreboard/" target="_blank">Scores</a>
       </div>
       <div>
-        <h3>Trade - August 23, 2024</h3>
+        <h3>Trade - March 27, 2025</h3>
         <div>
           <p>To Mashers:</p>
           <ul>
-            <li>Bashers 3rd round draft pick (2025)</li>
+          <li>SP T Bibee Cle</li>
+          <li>SP B Miller  Sea</li>
+          <li>C L O Hoppe LAA</li>
+          <li>2B/1B C Keith. Det</li>
+          <li>SS Z Neto. LAA</li>
           </ul>
-          <p>To Bashers:</p>
-          <ul>
-            <li>SP Seth Lugo KC</li>
-          </ul>
-        </div>
-      </div>
-      <hr />
-      <div>
-        <h3>Trade - April 5, 2024</h3>
-        <div>
           <p>To Stallions:</p>
           <ul>
-            <li>3rd round draft pick</li>
-            <li>5th round draft pick</li>
-          </ul>
-          <p>To Mashers:</p>
-          <ul>
-            <li>2B G Torres NYY</li>
-            <li>RP C Esteves LAA</li>
-
-            <li>SS A Volpe NYY</li>
+          <li>SP L Gilbert Sea</li>
+          <li>2nd Rd pick</li>
+          <li>4th Rd pick</li>
+          <li>7th Rd pick</li>
+          <li>Prospect M Mayer SS Bos</li>
           </ul>
         </div>
       </div>
+
       
       {isHiddenOn && <textarea rows="12" cols="90" alue={JSON.stringify(rosterData)} />}
   </Layout>);

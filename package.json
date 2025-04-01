@@ -1,10 +1,10 @@
 {
-  "name": "bbpool2024",
+  "name": "bbpool2025",
   "version": "0.0.1",
   "description": "application for baseball pool 2024",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev -p 2024",
+    "dev": "next dev -p 2025",
     "build": "next build",
     "start": "next start",
     "test": "test"
@@ -15,14 +15,14 @@
   },  
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seanbrookes/bbpool2022.git"
+    "url": "git+https://github.com/seanbrookes/bbpool2025.git"
   },
   "author": "Sean Brookes",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/seanbrookes/bbpool2022/issues"
+    "url": "https://github.com/seanbrookes/bbpool2025/issues"
   },
-  "homepage": "https://github.com/seanbrookes/bbpool2022#readme",
+  "homepage": "https://github.com/seanbrookes/bbpool2025#readme",
   "dependencies": {
     "aws-sdk": "^2.884.0",
     "express": "^4.17.1",

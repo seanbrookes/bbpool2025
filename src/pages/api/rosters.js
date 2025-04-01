@@ -13,10 +13,10 @@ export default async function(req, res) {
     /*
     write the file
     */
-    fs.writeFile(`./src/data/rosters2024.json`, JSON.stringify(targetPost), err => { 
+    fs.writeFile(`./src/data/rosters2025.json`, JSON.stringify(targetPost), err => { 
       if (err) throw err;  
     });
-    fs.writeFile(`./bak/rosters2024-${saveTimestamp}.json`, JSON.stringify(targetPost), err => { 
+    fs.writeFile(`./bak/rosters2025-${saveTimestamp}.json`, JSON.stringify(targetPost), err => { 
           
       // Checking for errors 
       if (err) throw err;  
@@ -35,7 +35,7 @@ export default async function(req, res) {
     let rosterData = null;
 
     try {
-      const data = fs.readFileSync('./src/data/rosters2024.json');
+      const data = fs.readFileSync('./src/data/rosters2025.json');
 
       rosterData = JSON.parse(data);
     } catch (err) {

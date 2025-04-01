@@ -1,4 +1,4 @@
-# bbpool2024
+# bbpool2025
 Annual friends baseball pool site.
 
 Note to self: use Google sheets  for the draft/protected list
@@ -7,6 +7,7 @@ at the beginning of the season we need to:
 - update the year in a number of places (page and documentation titles, fetch urls, etc)
 - each player needs a unique 'nickname' to bridge unique/foreign key links for players with no official record at mlb yet
 - when we copy over the roster json it is important to zero out the totals of each player to avoid distortion at the beginning of the year.
+- each year we protect 10 or 12 players
 
 It hosts 4 teams with protected rosters between seasons and then facilitates a draft before the season to fill out unprotected positions in each roster.
 
@@ -23,7 +24,7 @@ closers: wins, saves, k's
 
 Hosted using Vercel app hosting - pretty slick
 
-https://bbpool2024.vercel.app/
+https://bbpool2025.vercel.app/
 ![pool screenshot](https://user-images.githubusercontent.com/1751524/124396823-ce6ccb00-dcc0-11eb-81cd-e390f6bb16f0.png)
 
 
@@ -35,7 +36,7 @@ Note this is only for local development as there is no api in production as ther
 ```
 $npm run dev
 ```
-should come up on port 2024
+should come up on port 2025
 
 ### isHiddenOn
 is the switch to turn on local editing controls in index.js
@@ -43,9 +44,9 @@ is the switch to turn on local editing controls in index.js
   const [isHiddenOn, setIsHiddenOn] = useState(true);
 ```
 
-https://github.com/seanbrookes/bbpool2024
+https://github.com/seanbrookes/bbpool2025
 
-https://vercel.com/seanbrookes/bbpool2024 
+https://vercel.com/seanbrookes/bbpool2025 
 
 ```
 hiiter total calc:

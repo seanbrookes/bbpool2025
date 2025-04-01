@@ -4,7 +4,7 @@ export const saveRosters = (rosterData) => {
     return;
   }
   if (rosterData && rosterData.bashers && rosterData.stallions) {
-    return fetch('http://localhost:2024/api/rosters', {
+    return fetch('http://localhost:2025/api/rosters', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
