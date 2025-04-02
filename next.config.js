@@ -1,23 +1,25 @@
 module.exports = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Fixes npm packages that depend on `fs` module
+    // Fixes npm packages that depend on `fs`, `net`, `tls`, and `dns` modules.
 
-    config.node = {
-      ...(config.node || {}),
-      net: 'empty',
-      tls: 'empty',
-      dns: 'empty'
-    };
     if (!isServer) {
-      config.node = {
-        ...(config.node || {}),
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty',
-        dns: 'empty'
-      }
+      config.resolve.fallback = {
+        ...(config.resolve.fallback || {}),
+        fs: false,
+        net: false,
+        tls: false,
+        dns: false,
+      };
+    } else {
+      config.resolve.fallback = {
+        ...(config.resolve.fallback || {}),
+        net: false,
+        tls: false,
+        dns: false,
+      };
     }
+
     // Important: return the modified config
-    return config
+    return config;
   },
-}
+};
