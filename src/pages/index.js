@@ -80,7 +80,6 @@ const posList = [
   '3B',
   'SS',
   'OF',
-  'DH',
   'SP',
   'RP'
 ];
@@ -91,7 +90,6 @@ const hitterPosList = [
   '3B',
   'SS',
   'OF',
-  'DH',
 ];
 /* 
 @media (min-width: 768px) { 
@@ -120,8 +118,6 @@ export const getPosValue = (pos) => {
       return 7;
     case 'RF':
       return 8;
-    case 'DH':
-      return 9;
     case 'SP':
       return 10;
     case 'RP':
@@ -222,7 +218,6 @@ function HomePage() {
         '2B': 0,
         '3B': 0,
         'SS': 0,
-        'DH': 0,
         'hitters': 0,
         'starters': 0,
         'relievers': 0,
@@ -293,8 +288,8 @@ function HomePage() {
               // tally up outfielders
               tally = 0 ;
               let calculationCollection = [].concat(sortedCollection);
-              if (sortedCollection.length > 3) {
-                calculationCollection = sortedCollection.filter((item, index) => {return index < 3});
+              if (sortedCollection.length > 4) {
+                calculationCollection = sortedCollection.filter((item, index) => {return index < 4});
               }
               calculationCollection.map((player) => {
                 tally = tally + player.total;
@@ -331,10 +326,7 @@ function HomePage() {
           //       setRosterSSTotal(tally);
                   break;
                 }
-                case 'DH': {
-          //       setRosterDHTotal(tally);
-                  break;
-                }
+
                 default: {}
               }
             }
@@ -351,8 +343,7 @@ function HomePage() {
         Number(rosterTotals[rosterKey]['1B']) + 
         Number(rosterTotals[rosterKey]['2B']) + 
         Number(rosterTotals[rosterKey]['3B']) + 
-        Number(rosterTotals[rosterKey]['SS']) + 
-        Number(rosterTotals[rosterKey]['DH']);
+        Number(rosterTotals[rosterKey]['SS']); 
 
         if (rosterTotals[rosterKey]['hitters'] && rosterTotals[rosterKey]['starters'] && rosterTotals[rosterKey]['relievers']) {
           const theTotal = rosterTotals[rosterKey]['hitters'] + rosterTotals[rosterKey]['starters'] + rosterTotals[rosterKey]['relievers'];    
@@ -717,11 +708,10 @@ if (rosterDisplayCollection && rosterDisplayCollection.length > 0) {
         const roster2BTotal = positionTotals['2B'];
         const roster3BTotal = positionTotals['3B'];
         const rosterSSTotal = positionTotals['SS'];
-        const rosterDHTotal = positionTotals['DH'];
         const rosterStartersTotal = positionTotals['SP'];
         const rosterClosersTotal = positionTotals['RP'];
 
-        const runningHitterTotal =  Number(rosterOutfieldTotal) + Number(rosterCatcherTotal) + Number(roster1BTotal) + Number(roster2BTotal) + Number(roster3BTotal) + Number(rosterSSTotal) + Number(rosterDHTotal);
+        const runningHitterTotal =  Number(rosterOutfieldTotal) + Number(rosterCatcherTotal) + Number(roster1BTotal) + Number(roster2BTotal) + Number(roster3BTotal) + Number(rosterSSTotal);
         
         const theTotal = runningHitterTotal + rosterStartersTotal + rosterClosersTotal;
         

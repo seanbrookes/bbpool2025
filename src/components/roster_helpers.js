@@ -7,7 +7,6 @@ const posList = [
   '3B',
   'SS',
   'OF',
-  'DH',
   'SP',
   'RP'
 ];
@@ -80,9 +79,12 @@ export const getRosterTotals = (currentRoster) => {
           // tally up outfielders
           tally = 0 ;
           let calculationCollection = [].concat(sortedCollection);
-          if (sortedCollection.length > 3) {
-            calculationCollection = sortedCollection.filter((item, index) => {return index < 3});
+          if (sortedCollection.length > 4) {
+            calculationCollection = sortedCollection.filter((item, index) => {
+              return index < 4;
+            });
           }
+
           calculationCollection.map((player) => {
             tally = tally + player.total;
           });
@@ -125,7 +127,7 @@ export const getRosterTotals = (currentRoster) => {
               break;
             }
             case 'DH': {
-              rostPosTotals['DH'] = tally;
+              rostPosTotals['DH'] = 0;
 
 
               break;
